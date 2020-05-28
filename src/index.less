@@ -1,0 +1,56 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+a,
+p,
+textarea {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+img {
+    border: none;
+    display: inline-block;
+    max-width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    &-thumb {
+        border-radius: 8px;
+        background: rgba(2, 3, 3, .09);
+    }
+    &-track {
+        background: hsla(210, 8%, 51%, .09);
+    }
+}
+
+::selection {
+    background-color: #b3d4fc;
+    color: #000;
+    text-shadow: none;
+}
