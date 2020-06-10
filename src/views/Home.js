@@ -1,14 +1,14 @@
 import React from "react";
-import TheCarousel from "../components/home/TheCarousel";
-import ArticleItems from "../components/home/ArticleItems";
+import HomeCarousel from "../components/home/HomeCarousel";
+import Articles from "./Articles";
 import "./Home.less";
 
 export default () => {
 
     return (
         <div className="home">
-            <TheCarousel />
-            <ArticleItems />
+            <HomeCarousel />
+            <Articles />
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button, Carousel, Switch } from "antd";
+import { Button, Carousel } from "antd";
+import ModuleTitle from "../common/ModuleTitle";
 
 export default () => {
 
@@ -16,24 +17,11 @@ export default () => {
         }
     ]);
 
-    let [autoCarousel, setAutoCarousel] = useState(true);
-
-    const changeAutoCarousel = val => {
-        setAutoCarousel(val);
-    };
 
     return (
         <div className="home-carousel">
-            <div className="header">
-                <div className="left">
-                    <span>猜你喜欢</span>
-                </div>
-                <div className="right">
-                    <Switch defaultChecked onChange={changeAutoCarousel} />
-                    <span>自动播放</span>
-                </div>
-            </div>
-            <Carousel autoplay={autoCarousel}>
+            <ModuleTitle value="猜你喜欢" />
+            <Carousel autoplay>
                 {items.map(item => (
                     <div className="item-wrapper" key={item.id}>
                         <div className="item" style={{ backgroundImage: `url(${item.imgUrl})` }}>

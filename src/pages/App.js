@@ -1,8 +1,9 @@
 import React from "react";
-import "./App.less";
+import { BrowserRouter } from "react-router-dom";
 import AppHeader from "../components/app/AppHeader";
 import AppContainer from "../components/app/AppContainer";
-import { BrowserRouter } from "react-router-dom";
+import AppFooter from "../components/app/AppFooter";
+import "./App.less";
 
 export default () => {
     return (
@@ -10,6 +11,7 @@ export default () => {
             <BrowserRouter>
                 <AppHeader />
                 <AppContainer />
+                <AppFooter />
             </BrowserRouter>
         </div>
     );
