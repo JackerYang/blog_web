@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import ModuleTitle from "./ModuleTitle";
 import { EyeFilled, HeartFilled, MessageFilled } from "@ant-design/icons";
 import "./ArticleItems.less";
 
 export default () => {
+    let history = useHistory();
+
     let [articleList] = useState([
         {
             id: 1,
@@ -16,6 +19,13 @@ export default () => {
             commentNum: 5
         }
     ]);
+
+    const readArticle = id => {
+        if (history.location.pathname !== `/post/${id}`) {
+            history.push(`/post/${id}`);
+        }
+    };
+
     return (
         <div className="article-items">
             <ModuleTitle value="全部文章" />
@@ -28,7 +38,10 @@ export default () => {
                             <div className="create-time">{article.createTime}</div>
                             <div className="desc">{article.desc}</div>
                             <div className="bottom">
-                                <div className="read">开始阅读</div>
+                                <div className="read" onClick={() => {
+                                    readArticle(article.id);
+                                }}>开始阅读
+                                </div>
                                 <div className="count">
                                     <span className="count-item"><EyeFilled /> {article.readCount}</span>
                                     <span className="count-item"><HeartFilled /> {article.likeCount}</span>

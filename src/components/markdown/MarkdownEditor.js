@@ -1,21 +1,34 @@
-import React from "react";
-import MdEditor from "react-markdown-editor-lite";
+import React, { useImperativeHandle, useState } from "react";
+import MdEditor, { Plugins } from "react-markdown-editor-lite";
 import "react-markdown-editor-lite/lib/index.css";
-import MarkdownRender from "./MarkdownRender";
+import Render from "./MarkdownRender";
 
-export default ({ getText, text = "" }) => {
+MdEditor.use(Plugins.AutoResize, {
+    min: 120, // 最小高度
+    max: 500 // 最大高度
+});
 
-    const handleEditorChange = ({ text }) => {
-        getText(text);
-    };
+export default ({ mdRef }) => {
+
+    let [mdEditor, setMdEditor] = useState(null);
+
+    useImperativeHandle(mdRef, () => ({
+        getMdValue: () => mdEditor?.getMdValue()
+    }));
 
     return (
         <MdEditor
+            ref={el => setMdEditor(el)}
             placeholder="请输入评论..."
-            value={text}
-            style={{ height: "500px" }}
-            renderHTML={_text => <MarkdownRender content={_text} />}
-            onChange={handleEditorChange}
+            plugins={["fonts", "link", "mode-toggle", "full-screen", "auto-resize"]}
+            config={{
+                view: {
+                    menu: true,
+                    md: true,
+                    html: false
+                }
+            }}
+            renderHTML={text => Render(text)}
         />
     );
 }

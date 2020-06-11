@@ -11,15 +11,16 @@ import tasklists from "markdown-it-task-lists";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-light.css";
 
-
 const md = new MarkdownIt("commonmark", {
-    html: true,
+    html: false,
     linkify: true,
+    breaks: true,
+    langPrefix: "language-",
     typographer: true,
     highlight: (str, lang) => {
         if (lang && hljs.getLanguage(lang)) {
             try {
-                return hljs.highlight(lang, str, true).value;
+                return hljs.highlight(lang, str, true, undefined).value;
             } catch (__) {
             }
         }
@@ -37,9 +38,5 @@ const md = new MarkdownIt("commonmark", {
     .use(mark)
     .use(tasklists);
 
-
-export default ({ content }) => {
-    console.log(content);
-    return md.render(content);
-}
+export default text => md.render(text)
 

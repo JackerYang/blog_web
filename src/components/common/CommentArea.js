@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import MarkdownEditor from "../markdown/MarkdownEditor";
+import { Button } from "antd";
 
 export default () => {
 
-    const getMarkdownText = text => {
-        console.log(text);
+    const mdRef = useRef(null);
+
+    const postComment = () => {
+        let mdValue = mdRef?.current?.getMdValue();
+        console.log(mdValue);
     };
 
     return (
         <div className="comment-area">
-            <MarkdownEditor getText={getMarkdownText} />
+            <MarkdownEditor mdRef={mdRef} />
+            <Button onClick={postComment}>发表</Button>
         </div>
     );
 }
