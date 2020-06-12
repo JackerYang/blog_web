@@ -2,6 +2,7 @@ import React, { useImperativeHandle, useState } from "react";
 import MdEditor, { Plugins } from "react-markdown-editor-lite";
 import "react-markdown-editor-lite/lib/index.css";
 import Render from "./MarkdownRender";
+import "./MarkdownEditor.less";
 
 MdEditor.use(Plugins.AutoResize, {
     min: 120, // 最小高度
@@ -26,6 +27,13 @@ export default ({ mdRef }) => {
                     menu: true,
                     md: true,
                     html: false
+                },
+                canView: {
+                    menu: true,
+                    md: true,
+                    html: true,
+                    fullScreen: true,
+                    hideMenu: false
                 }
             }}
             renderHTML={text => Render(text)}

@@ -4,15 +4,21 @@ import { EyeFilled } from "@ant-design/icons";
 import "./ArticleDetail.less";
 import Render from "../components/markdown/MarkdownRender";
 import CommentArea from "../components/common/CommentArea";
+import ModuleTitle from "../components/common/ModuleTitle";
 
 export default () => {
-    let [img] = useState("https://yevpt-web-1252573911.cos.ap-beijing.myqcloud.com/post/images/861f2370efbc03e60aa02741f26cbc63.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDSFm36bspY2JNBi9Phusb4IaiaFenpKp9%26q-sign-time%3D1591690076%3B1591693676%26q-key-time%3D1591690076%3B1591693676%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D6e81f501f0017c7564699ae3d5640ca09bb2bedb");
+    let [img] = useState("https://www.beihaiting.com/uploads/allimg/150414/10723-150414221435X2.jpg");
+
+    const addComment = commentContent => {
+        console.log(commentContent);
+    }
+
     return (
         <div className="article-detail">
-            <img src={img} alt="" />
+            <img src={img} alt="img" />
             <div className="article-container">
                 <div className="title">
-                    你们轻轻唱，听完我就走。
+                    天行健，君子以自强不息。
                 </div>
                 <div className="info">
                     <div className="left">
@@ -27,11 +33,13 @@ export default () => {
                         354
                     </div>
                 </div>
-                <div className="content" dangerouslySetInnerHTML={{__html: Render("# 123")}}>
-
-                </div>
+                <div className="content" dangerouslySetInnerHTML={{ __html: Render("# 123") }} />
             </div>
-            <CommentArea />
+            <p className="line" />
+            <div className="article-comment">
+                <ModuleTitle value="评论" />
+                <CommentArea addComment={addComment} />
+            </div>
         </div>
     );
 }

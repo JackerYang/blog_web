@@ -8,12 +8,12 @@ export default () => {
         {
             id: 1,
             title: "寒冷的冬天",
-            imgUrl: require("../../assets/img/carousel1.jpg")
+            imgUrl: "https://10wallpaper.com/wallpaper/1920x1080/1411/blue_reflections-Abstract_widescreen_wallpaper_1920x1080.jpg"
         },
         {
             id: 2,
             title: "炎热的夏天",
-            imgUrl: require("../../assets/img/carousel2.jpg")
+            imgUrl: "https://pic.rmb.bdstatic.com/86c94af0afe1ea2023448d11f24df2a5.jpeg"
         }
     ]);
 
