@@ -3,7 +3,7 @@ import { Avatar } from "antd";
 import { EyeFilled } from "@ant-design/icons";
 import "./ArticleDetail.less";
 import Render from "../components/markdown/MarkdownRender";
-import CommentArea from "../components/common/CommentArea";
+import CommentPost from "../components/common/CommentPost";
 import ModuleTitle from "../components/common/ModuleTitle";
 
 export default () => {
@@ -11,7 +11,7 @@ export default () => {
 
     const addComment = commentContent => {
         console.log(commentContent);
-    }
+    };
 
     return (
         <div className="article-detail">
@@ -38,7 +38,7 @@ export default () => {
             <p className="line" />
             <div className="article-comment">
                 <ModuleTitle value="评论" />
-                <CommentArea addComment={addComment} />
+                <CommentPost addComment={addComment} />
             </div>
         </div>
     );
