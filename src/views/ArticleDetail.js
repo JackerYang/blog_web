@@ -3,8 +3,9 @@ import { Avatar } from "antd";
 import { EyeFilled } from "@ant-design/icons";
 import "./ArticleDetail.less";
 import Render from "../components/markdown/MarkdownRender";
-import CommentPost from "../components/common/CommentPost";
 import ModuleTitle from "../components/common/ModuleTitle";
+import CommentPost from "../components/common/CommentPost";
+import CommentArea from "../components/common/CommentArea";
 
 export default () => {
     let [img] = useState("https://www.beihaiting.com/uploads/allimg/150414/10723-150414221435X2.jpg");
@@ -39,6 +40,7 @@ export default () => {
             <div className="article-comment">
                 <ModuleTitle value="评论" />
                 <CommentPost addComment={addComment} />
+                <CommentArea />
             </div>
         </div>
     );
