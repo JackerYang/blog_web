@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import ModuleTitle from "./ModuleTitle";
-import { EyeFilled, HeartFilled, MessageFilled } from "@ant-design/icons";
+import { EyeFilled, MessageFilled } from "@ant-design/icons";
 import "./ArticleItems.less";
 
 export default () => {
@@ -15,7 +15,6 @@ export default () => {
             createTime: "五月 24, 2020",
             desc: "Nps是一款轻量级、高性能、功能强大的内网穿透代理服务器。几乎支持所有协议，支持内网http代理、内网socks5代理、p2p等，简洁但功能强大的WEB管理界面...",
             readCount: 52,
-            likeCount: 10,
             commentNum: 5
         }
     ]);
@@ -33,7 +32,12 @@ export default () => {
                 {
                     articleList.map(article => (
                         <div className="article-item" key={article.id}>
-                            <img src={article.imgPath} alt={article.title} />
+                            {
+                                article.imgPath &&
+                                <div className="img">
+                                    <img src={article.imgPath} alt={article.title} />
+                                </div>
+                            }
                             <div className="title">{article.title}</div>
                             <div className="create-time">{article.createTime}</div>
                             <div className="desc">{article.desc}</div>
@@ -44,7 +48,6 @@ export default () => {
                                 </div>
                                 <div className="count">
                                     <span className="count-item"><EyeFilled /> {article.readCount}</span>
-                                    <span className="count-item"><HeartFilled /> {article.likeCount}</span>
                                     <span className="count-item"><MessageFilled /> {article.commentNum}</span>
                                 </div>
                             </div>
