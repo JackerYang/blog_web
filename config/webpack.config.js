@@ -462,7 +462,12 @@ module.exports = function (webpackEnv) {
                                     sourceMap: isEnvProduction && shouldUseSourceMap
                                 },
                                 "less-loader"
-                            ),
+                            ).concat({
+                                loader: require.resolve("style-resources-loader"),
+                                options: {
+                                    patterns: [path.resolve(__dirname, "../src/assets/style/common.less")]
+                                }
+                            }),
                             sideEffects: true
                         },
                         {

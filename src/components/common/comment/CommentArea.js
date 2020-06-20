@@ -9,7 +9,7 @@ export default () => {
     let [commentsLoading, setCommentLoading] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => {
+        let timer = setTimeout(() => {
             setComments([
                 {
                     id: 1,
@@ -51,6 +51,9 @@ export default () => {
             ]);
             setCommentLoading(false);
         }, 3000);
+        return () => {
+            clearTimeout(timer);
+        };
     }, []);
 
     return (

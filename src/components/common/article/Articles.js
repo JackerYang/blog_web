@@ -1,6 +1,6 @@
 import React from "react";
-import ArticleItems from "../components/common/ArticleItems";
-import ArticleTags from "../components/common/ArticleTags";
+import ArticleItems from "./ArticleItems";
+import ArticleTags from "./ArticleTags";
 import "./Articles.less";
 
 export default () => {

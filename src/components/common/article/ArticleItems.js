@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import ModuleTitle from "./ModuleTitle";
+import ModuleTitle from "../ModuleTitle";
 import { EyeFilled, MessageFilled } from "@ant-design/icons";
 import "./ArticleItems.less";
 

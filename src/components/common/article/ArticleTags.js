@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Skeleton } from "antd";
-import ModuleTitle from "./ModuleTitle";
+import ModuleTitle from "../ModuleTitle";
 import Icon, {
     AlipayOutlined,
     GithubOutlined,
@@ -25,7 +25,7 @@ export default () => {
     };
 
     useEffect(() => {
-        setTimeout(() => {
+        let timer = setTimeout(() => {
             setTags([
                 {
                     id: 1,
@@ -66,6 +66,9 @@ export default () => {
             ]);
             setTagsLoading(false);
         }, 2000);
+        return () => {
+            clearTimeout(timer);
+        };
     }, []);
 
     return (

@@ -3,8 +3,9 @@ import { Route, Switch } from "react-router-dom";
 import Home from "../../views/Home";
 import GuestBook from "../../views/GuestBook";
 import FriendLink from "../../views/FriendLink";
-import Articles from "../../views/Articles";
-import ArticleDetail from "../../views/ArticleDetail";
+import Articles from "../common/article/Articles";
+import ArticleDetail from "../common/article/ArticleDetail";
+import "./AppContainer.less";
 
 export default () => {
     return (

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import MarkdownEditor from "../markdown/MarkdownEditor";
+import MarkdownEditor from "../../markdown/MarkdownEditor";
 import { Button } from "antd";
 import "./CommentPost.less";
 
@@ -19,6 +19,7 @@ export default ({ addComment }) => {
                 <Button type="primary" size="small" onClick={postComment}>发表</Button>
                 {/*<Button type="primary" size="small" danger>请先登录</Button>*/}
             </div>
+            <p className="end-line" />
         </div>
     );
 }

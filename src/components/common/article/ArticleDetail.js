@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Avatar } from "antd";
 import { EyeFilled } from "@ant-design/icons";
 import "./ArticleDetail.less";
-import Render from "../components/markdown/MarkdownRender";
-import ModuleTitle from "../components/common/ModuleTitle";
-import CommentPost from "../components/common/CommentPost";
-import CommentArea from "../components/common/CommentArea";
+import Render from "../../markdown/MarkdownRender";
+import ModuleTitle from "../ModuleTitle";
+import CommentPost from "../comment/CommentPost";
+import CommentArea from "../comment/CommentArea";
 
 export default () => {
     let [img] = useState("https://www.beihaiting.com/uploads/allimg/150414/10723-150414221435X2.jpg");

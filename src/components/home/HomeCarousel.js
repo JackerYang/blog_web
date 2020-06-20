@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Button, Carousel } from "antd";
 import ModuleTitle from "../common/ModuleTitle";
 
 export default () => {
+    let history = useHistory();
 
     let [items] = useState([
         {
@@ -17,6 +19,11 @@ export default () => {
         }
     ]);
 
+    const toArticleDetail = id => {
+        if (history.location.pathname !== `/post/${id}`) {
+            history.push(`/post/${id}`);
+        }
+    };
 
     return (
         <div className="home-carousel">
@@ -26,7 +33,9 @@ export default () => {
                     <div className="item-wrapper" key={item.id}>
                         <div className="item" style={{ backgroundImage: `url(${item.imgUrl})` }}>
                             <div className="title">{item.title}</div>
-                            <Button danger size="large" type="primary" shape="round">开始阅读</Button>
+                            <Button danger size="large" onClick={() => {
+                                toArticleDetail(item.id);
+                            }} type="primary" shape="round">开始阅读</Button>
                         </div>
                     </div>
                 ))}
