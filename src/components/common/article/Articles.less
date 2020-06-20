@@ -1,5 +1,7 @@
-@media screen and (min-width: 960px) {
-    .articles {
+.articles {
+    .container-center-reactive;
+    width: 100%;
+    @media screen and (min-width: 960px) {
         display: flex;
         justify-content: space-between;
         &-left {
@@ -9,9 +11,7 @@
             width: 32%;
         }
     }
-}
-@media screen and (max-width: 960px) {
-    .articles {
+    @media screen and (max-width: 960px) {
         &-right {
             margin-top: 40px;
         }
