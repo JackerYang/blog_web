@@ -6,6 +6,7 @@ import Render from "../../markdown/MarkdownRender";
 import ModuleTitle from "../ModuleTitle";
 import CommentPost from "../comment/CommentPost";
 import CommentArea from "../comment/CommentArea";
+import WaterWave from "../../effect/WaterWave";
 
 export default () => {
     let [img] = useState("");
@@ -31,7 +32,8 @@ export default () => {
                             <div className="time">一月 02, 2020</div>
                         </div>
                     </div>
-                    <div className="right waves">
+                    <div className="right">
+                        <WaterWave color="#999" />
                         <EyeFilled />
                         354
                     </div>

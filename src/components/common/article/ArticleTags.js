@@ -11,6 +11,7 @@ import Icon, {
     ZhihuOutlined
 } from "@ant-design/icons";
 import "./ArticleTags.less";
+import WaterWave from "../../effect/WaterWave";
 
 export default () => {
     let history = useHistory();
@@ -81,6 +82,7 @@ export default () => {
                         <li onClick={() => {
                             clickHandler(tag.id);
                         }} className="item" key={tag.id}>
+                            <WaterWave color="#000" />
                             <Icon component={tag.icon} />
                             <span className="label">{tag.label}</span>
                             <span>[ {tag.number} ]</span>

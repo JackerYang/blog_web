@@ -10,6 +10,7 @@ import { Button, Drawer, Tooltip } from "antd";
 import ModalLogin from "../login/ModalLogin";
 import { useHistory } from "react-router-dom";
 import "./AppHeader.less";
+import WaterWave from "../effect/WaterWave";
 
 export default () => {
     let history = useHistory();
@@ -58,7 +59,10 @@ export default () => {
     return (
         <header className="app-header">
             <div className="app-header-content">
-                <h1 className="title">NickYang</h1>
+                <h1 className="title">
+                    <WaterWave color="#000" />
+                    NickYang
+                </h1>
                 {/*大屏幕*/}
                 <ul className="navs">
                     {
@@ -66,6 +70,7 @@ export default () => {
                             <li className="nav" onClick={() => {
                                 clickHandler(nav);
                             }} key={nav.name}>
+                                <WaterWave color="#000" />
                                 {nav.title}
                             </li>
                         ))

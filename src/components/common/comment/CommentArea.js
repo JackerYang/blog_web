@@ -107,12 +107,11 @@ export default () => {
                                                 {subComment.reply_to_author.name}
                                             </div>
                                             <div className="time">
-                                                {comment.create_time}
+                                                {subComment.create_time}
                                             </div>
                                         </div>
                                         <div className="comment">
-                                            非常同意关于优化re-render的描述，vdom快不代表re-render快，目前flux没有找到一种最优实现，在nested
-                                            components中经常会遇到性能问题。react目前的第三方组件越来越像当年的jQuery Plugin，参差不齐的，用的爽的实在很少。。
+                                            {subComment.content}
                                         </div>
                                         <div className="review">
                                             <div className="btn">

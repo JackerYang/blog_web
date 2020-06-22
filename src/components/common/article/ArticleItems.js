@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import ModuleTitle from "../ModuleTitle";
 import { EyeFilled, MessageFilled } from "@ant-design/icons";
 import "./ArticleItems.less";
+import WaterWave from "../../effect/WaterWave";
 
 export default () => {
     let history = useHistory();
@@ -44,7 +45,9 @@ export default () => {
                             <div className="bottom">
                                 <div className="read" onClick={() => {
                                     readArticle(article.id);
-                                }}>开始阅读
+                                }}>
+                                    <WaterWave color="#666" />
+                                    开始阅读
                                 </div>
                                 <div className="count">
                                     <span className="count-item"><EyeFilled /> {article.readCount}</span>
