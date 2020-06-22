@@ -75,19 +75,18 @@ export default () => {
         <div className="article-tags">
             <ModuleTitle value="全部标签" />
             <div className="item-wrapper">
-                <Skeleton active={true} loading={tagsLoading}>
-                    {
-                        tags.map(tag => (
-                            <li onClick={() => {
-                                clickHandler(tag.id);
-                            }} className="item" key={tag.id}>
-                                <Icon component={tag.icon} />
-                                <span className="label">{tag.label}</span>
-                                <span>[ {tag.number} ]</span>
-                            </li>
-                        ))
-                    }
-                </Skeleton>
+                <Skeleton paragraph={{ rows: 4 }} title={false} active={true} loading={tagsLoading} />
+                {
+                    tags.map(tag => (
+                        <li onClick={() => {
+                            clickHandler(tag.id);
+                        }} className="item" key={tag.id}>
+                            <Icon component={tag.icon} />
+                            <span className="label">{tag.label}</span>
+                            <span>[ {tag.number} ]</span>
+                        </li>
+                    ))
+                }
             </div>
         </div>
     );

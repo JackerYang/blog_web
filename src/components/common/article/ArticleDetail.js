@@ -8,7 +8,7 @@ import CommentPost from "../comment/CommentPost";
 import CommentArea from "../comment/CommentArea";
 
 export default () => {
-    let [img] = useState("https://www.beihaiting.com/uploads/allimg/150414/10723-150414221435X2.jpg");
+    let [img] = useState("");
 
     const addComment = commentContent => {
         console.log(commentContent);
@@ -16,7 +16,9 @@ export default () => {
 
     return (
         <div className="article-detail">
-            <img src={img} alt="img" />
+            {
+                img && <img src={img} alt="img" />
+            }
             <div className="article-container">
                 <div className="title">
                     天行健，君子以自强不息。
@@ -29,7 +31,7 @@ export default () => {
                             <div className="time">一月 02, 2020</div>
                         </div>
                     </div>
-                    <div className="right">
+                    <div className="right waves">
                         <EyeFilled />
                         354
                     </div>

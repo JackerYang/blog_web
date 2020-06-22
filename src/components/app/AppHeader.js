@@ -7,6 +7,7 @@ import Icon, {
     UsergroupAddOutlined
 } from "@ant-design/icons";
 import { Button, Drawer, Tooltip } from "antd";
+import ModalLogin from "../login/ModalLogin";
 import { useHistory } from "react-router-dom";
 import "./AppHeader.less";
 
@@ -71,9 +72,11 @@ export default () => {
                     }
                 </ul>
                 <div className="login">
-                    <Tooltip title="登录">
-                        <LoginOutlined />
-                    </Tooltip>
+                    <ModalLogin>
+                        <Tooltip title="登录">
+                            <LoginOutlined />
+                        </Tooltip>
+                    </ModalLogin>
                 </div>
 
                 {/*小屏幕*/}
