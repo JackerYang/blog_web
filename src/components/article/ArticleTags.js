@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Skeleton } from "antd";
-import ModuleTitle from "../ModuleTitle";
+import React, { useEffect, useState } from "react"
+import { useHistory } from "react-router-dom"
+import { Skeleton } from "antd"
+import ModuleTitle from "../common/ModuleTitle"
 import Icon, {
     AlipayOutlined,
     GithubOutlined,
@@ -9,21 +9,21 @@ import Icon, {
     Html5Outlined,
     QqOutlined,
     ZhihuOutlined
-} from "@ant-design/icons";
-import "./ArticleTags.less";
-import WaterWave from "../../effect/WaterWave";
+} from "@ant-design/icons"
+import "./ArticleTags.less"
+import WaterWave from "../../components/effect/WaterWave"
 
 export default () => {
-    let history = useHistory();
+    let history = useHistory()
 
-    const [tags, setTags] = useState([]);
-    const [tagsLoading, setTagsLoading] = useState(true);
+    const [tags, setTags] = useState([])
+    const [tagsLoading, setTagsLoading] = useState(true)
 
     const clickHandler = id => {
         if (history.location.pathname !== `/tag/${id}`) {
-            history.push(`/tag/${id}`);
+            history.push(`/tag/${id}`)
         }
-    };
+    }
 
     useEffect(() => {
         let timer = setTimeout(() => {
@@ -64,13 +64,13 @@ export default () => {
                     number: 46,
                     icon: AlipayOutlined
                 }
-            ]);
-            setTagsLoading(false);
-        }, 2000);
+            ])
+            setTagsLoading(false)
+        }, 2000)
         return () => {
-            clearTimeout(timer);
-        };
-    }, []);
+            clearTimeout(timer)
+        }
+    }, [])
 
     return (
         <div className="article-tags">
@@ -80,7 +80,7 @@ export default () => {
                 {
                     tags.map(tag => (
                         <li onClick={() => {
-                            clickHandler(tag.id);
+                            clickHandler(tag.id)
                         }} className="item" key={tag.id}>
                             <WaterWave color="#000" />
                             <Icon component={tag.icon} />
@@ -91,5 +91,5 @@ export default () => {
                 }
             </div>
         </div>
-    );
+    )
 }

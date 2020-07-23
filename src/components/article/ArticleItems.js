@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import ModuleTitle from "../ModuleTitle";
-import { EyeFilled, MessageFilled } from "@ant-design/icons";
-import "./ArticleItems.less";
-import WaterWave from "../../effect/WaterWave";
+import React, { useState } from "react"
+import { useHistory } from "react-router-dom"
+import ModuleTitle from "../common/ModuleTitle"
+import { EyeFilled, MessageFilled } from "@ant-design/icons"
+import "./ArticleItems.less"
+import WaterWave from "../../components/effect/WaterWave"
 
 export default () => {
-    let history = useHistory();
+    let history = useHistory()
 
     let [articleList] = useState([
         {
@@ -18,13 +18,13 @@ export default () => {
             readCount: 52,
             commentNum: 5
         }
-    ]);
+    ])
 
     const readArticle = id => {
         if (history.location.pathname !== `/post/${id}`) {
-            history.push(`/post/${id}`);
+            history.push(`/post/${id}`)
         }
-    };
+    }
 
     return (
         <div className="article-items">
@@ -44,7 +44,7 @@ export default () => {
                             <div className="desc">{article.desc}</div>
                             <div className="bottom">
                                 <div className="read" onClick={() => {
-                                    readArticle(article.id);
+                                    readArticle(article.id)
                                 }}>
                                     <WaterWave color="#666" />
                                     开始阅读
@@ -59,5 +59,5 @@ export default () => {
                 }
             </div>
         </div>
-    );
+    )
 }

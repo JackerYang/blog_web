@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import { Avatar } from "antd";
-import { EyeFilled } from "@ant-design/icons";
-import "./ArticleDetail.less";
-import Render from "../../markdown/MarkdownRender";
-import ModuleTitle from "../ModuleTitle";
-import CommentPost from "../comment/CommentPost";
-import CommentArea from "../comment/CommentArea";
-import WaterWave from "../../effect/WaterWave";
+import React, { useState } from "react"
+import { Avatar } from "antd"
+import { EyeFilled } from "@ant-design/icons"
+import "./ArticleDetail.less"
+import Render from "../../components/markdown/MarkdownRender"
+import ModuleTitle from "../../components/common/ModuleTitle"
+import ArticleBelongTags from "../../components/article/ArticleBelongTags"
+import CommentPost from "../../components/common/comment/CommentPost"
+import CommentArea from "../../components/common/comment/CommentArea"
+import WaterWave from "../../components/effect/WaterWave"
 
 export default () => {
-    let [img] = useState("");
+    let [img] = useState("")
 
     const addComment = commentContent => {
-        console.log(commentContent);
-    };
+        console.log(commentContent)
+    }
 
     return (
         <div className="article-detail">
@@ -24,6 +25,8 @@ export default () => {
                 <div className="title">
                     天行健，君子以自强不息。
                 </div>
+                <ArticleBelongTags
+                    categories={[{ id: 1, name: "css" }, { id: 2, name: "vue" }, { id: 3, name: "html" }]} />
                 <div className="info">
                     <div className="left">
                         <Avatar size={48}>U</Avatar>
@@ -47,5 +50,5 @@ export default () => {
                 <CommentArea />
             </div>
         </div>
-    );
+    )
 }
