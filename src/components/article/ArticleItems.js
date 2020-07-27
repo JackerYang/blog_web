@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
-import ModuleTitle from "../common/ModuleTitle"
+import ModuleTitle from "../title/ModuleTitle"
 import { EyeFilled, MessageFilled } from "@ant-design/icons"
 import "./ArticleItems.less"
 import WaterWave from "../../components/effect/WaterWave"

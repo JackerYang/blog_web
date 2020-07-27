@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import MarkdownEditor from "../../markdown/MarkdownEditor";
+import MarkdownEditor from "../markdown/MarkdownEditor";
 import { Button } from "antd";
 import "./CommentPost.less";
 

@@ -1,7 +1,7 @@
 import React from "react";
-import ModuleTitle from "../../components/common/ModuleTitle";
-import CommentPost from "../../components/common/comment/CommentPost";
-import CommentArea from "../../components/common/comment/CommentArea";
+import ModuleTitle from "../../components/title/ModuleTitle";
+import CommentPost from "../../components/comment/CommentPost";
+import CommentArea from "../../components/comment/CommentArea";
 import "./GuestBook.less";
 
 export default () => {

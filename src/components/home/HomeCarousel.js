@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Carousel } from "antd";
-import ModuleTitle from "../common/ModuleTitle";
+import ModuleTitle from "../title/ModuleTitle";
 
 export default () => {
     let history = useHistory();

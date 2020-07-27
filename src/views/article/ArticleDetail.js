@@ -3,10 +3,10 @@ import { Avatar } from "antd"
 import { EyeFilled } from "@ant-design/icons"
 import "./ArticleDetail.less"
 import Render from "../../components/markdown/MarkdownRender"
-import ModuleTitle from "../../components/common/ModuleTitle"
+import ModuleTitle from "../../components/title/ModuleTitle"
 import ArticleBelongTags from "../../components/article/ArticleBelongTags"
-import CommentPost from "../../components/common/comment/CommentPost"
-import CommentArea from "../../components/common/comment/CommentArea"
+import CommentPost from "../../components/comment/CommentPost"
+import CommentArea from "../../components/comment/CommentArea"
 import WaterWave from "../../components/effect/WaterWave"
 
 export default () => {

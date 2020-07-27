@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { Skeleton } from "antd"
-import ModuleTitle from "../common/ModuleTitle"
+import ModuleTitle from "../title/ModuleTitle"
 import Icon, {
     AlipayOutlined,
     GithubOutlined,

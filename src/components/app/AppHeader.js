@@ -60,7 +60,7 @@ export default () => {
         <header className="app-header">
             <div className="app-header-content">
                 <h1 className="title">
-                    <WaterWave color="#000" />
+                    <WaterWave color="#f00" />
                     NickYang
                 </h1>
                 {/*大屏幕*/}

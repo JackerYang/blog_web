@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModuleTitle from "../../components/common/ModuleTitle";
+import ModuleTitle from "../../components/title/ModuleTitle";
 import "./FriendLink.less";
 
 export default () => {
