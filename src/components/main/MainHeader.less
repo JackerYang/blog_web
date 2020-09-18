@@ -1,0 +1,53 @@
+.MainHeader {
+    width: 100%;
+    height: @header-height;
+    background: @main-bg-color;
+    box-shadow: 0 2px 4px 0 rgba(235, 235, 235, 0.3);
+    &-container {
+        width: @container-width;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo-navs {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            .logo {
+                margin-right: 40px;
+                font-size: 24px;
+            }
+            .navs {
+                height: 100%;
+                .ant-menu {
+                    height: 100%;
+                    border: none;
+                    .ant-menu-item {
+                        height: 100%;
+                        top: 0;
+                        margin: 0 20px;
+                        line-height: @header-height;
+                        font-size: 18px;
+                        letter-spacing: 2px;
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+        .msg-user {
+            display: flex;
+            align-items: center;
+            .msg {
+                font-size: 24px;
+                cursor: pointer;
+                margin-right: 40px;
+            }
+            .user {
+                .ant-avatar {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}

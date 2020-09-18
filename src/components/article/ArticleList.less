@@ -1,0 +1,52 @@
+.article-item {
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .article-main {
+        width: 68%;
+        .article-title {
+            font-size: 18px;
+        }
+        .article-tags {
+            margin: 24px 0;
+        }
+        .article-desc {
+            line-height: 24px;
+        }
+        .article-info {
+            margin: 16px 0;
+            .ant-avatar {
+                margin-right: 5px;
+            }
+        }
+        .article-operate {
+            display: flex;
+            align-items: center;
+            &-item {
+                display: flex;
+                align-items: center;
+                margin-right: 15px;
+                padding-right: 15px;
+                cursor: pointer;
+                height: 16px;
+                &:not(:last-child) {
+                    border-right: 1px solid @split-line-color;
+                }
+                .iconfont {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    .article-cover {
+        width: 24%;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    &:not(:last-child) {
+        border-bottom: 1px solid @split-line-color;
+    }
+}
