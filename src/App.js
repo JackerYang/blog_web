@@ -5,7 +5,7 @@ import Main from "./pages/Main"
 
 const App = () => {
     return (
-        <div className="App">
+        <div className="app">
             <BrowserRouter>
                 <Switch>
                     <Route path="" exact={true} component={Main} />

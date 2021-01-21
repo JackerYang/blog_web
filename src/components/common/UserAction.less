@@ -1,0 +1,19 @@
+.user-action {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    &-item {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+        height: 16px;
+        &:not(:last-child) {
+            border-right: 1px solid @split-line-color;
+        }
+        .iconfont {
+            margin-right: 5px;
+        }
+    }
+}

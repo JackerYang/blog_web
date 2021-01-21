@@ -15,10 +15,6 @@ const MainHeader = () => {
         {
             title: "文章",
             path: "/article"
-        },
-        {
-            title: "话题",
-            path: "/topic"
         }
     ])
     // 当前选中路由
@@ -31,14 +27,14 @@ const MainHeader = () => {
     }
 
     return (
-        <div className="MainHeader">
-            <div className="MainHeader-container">
+        <div className="main-header">
+            <div className="main-header-container">
                 <div className="logo-navs">
                     <div className="logo">
                         Admin Pro
                     </div>
                     <div className="navs">
-                        <Menu onSelect={handleClick} selectedKeys={[current]} mode="horizontal">
+                        <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
                             {navs.map(nav => (
                                 <Menu.Item key={nav.path}>{nav.title}</Menu.Item>
                             ))}

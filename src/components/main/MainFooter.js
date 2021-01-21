@@ -2,8 +2,8 @@ import "./MainFooter.less"
 
 const MainFooter = () => {
     return (
-        <div className="MainFooter">
-            <div className="MainFooter-container">
+        <div className="main-footer">
+            <div className="main-footer-container">
                 <p>底部信息</p>
             </div>
         </div>

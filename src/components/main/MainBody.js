@@ -5,15 +5,13 @@ import "./MainBody.less"
 const MainBody = () => {
     const Home = lazy(() => import("../../views/Home"))
     const Article = lazy(() => import("../../views/Article"))
-    const Topic = lazy(() => import("../../views/Topic"))
     return (
-        <div className="MainBody">
-            <div className="MainBody-container">
+        <div className="main-body">
+            <div className="main-body-container">
                 <Suspense fallback={false}>
                     <Switch>
                         <Route path="/" exact={true} component={Home} />
                         <Route path="/article" exact={true} component={Article} />
-                        <Route path="/topic" exact={true} component={Topic} />
                     </Switch>
                 </Suspense>
             </div>

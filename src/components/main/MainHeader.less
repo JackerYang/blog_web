@@ -1,8 +1,12 @@
-.MainHeader {
+.main-header {
     width: 100%;
     height: @header-height;
     background: @main-bg-color;
     box-shadow: 0 2px 4px 0 rgba(235, 235, 235, 0.3);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
     &-container {
         width: @container-width;
         height: 100%;
@@ -11,6 +15,7 @@
         justify-content: space-between;
         align-items: center;
         .logo-navs {
+            user-select: none;
             height: 100%;
             display: flex;
             align-items: center;
