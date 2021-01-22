@@ -1,0 +1,32 @@
+.article-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .content {
+        width: @main-left-width;
+        .poster {
+            width: 100%;
+            height: auto;
+        }
+        .text {
+            padding: 24px 16px;
+            .title {
+                font-size: 28px;
+                margin: 16px 0 40px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+            h3 {
+                transition: all .5s;
+                &:focus {
+                    .common_highlight;
+                }
+            }
+        }
+    }
+    .side {
+        width: @main-right-width;
+    }
+}
