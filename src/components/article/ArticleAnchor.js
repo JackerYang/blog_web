@@ -23,7 +23,7 @@ const ArticleAnchor = () => {
     return (
         <WrapperCard title="目录" iconColor="#925adb" iconBackground="#faf2ff" icon="icon-sort">
             <div className="anchor-content">
-                <Anchor affix={false} offsetTop={80} onClick={clickHandle}>
+                <Anchor affix={false} showInkInFixed offsetTop={80} onClick={clickHandle}>
                     <Link href="#h-1" title="1111111" />
                     <Link href="#h-2" title="2222222" />
                     <Link href="#h-3" title="3333333" />

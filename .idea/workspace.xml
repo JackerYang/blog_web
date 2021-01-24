@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98729c90-72b0-42ef-b3b4-ad355ea81ff4" name="默认的" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/components/article/ArticleAnchor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/article/ArticleAnchor.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/article/ArticleInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/article/ArticleInfo.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/ArticleDetail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/ArticleDetail.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/style/common.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/style/common.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/article/ArticleList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/article/ArticleList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/article/ArticleAnchor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/article/ArticleAnchor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/WrapperCard.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/WrapperCard.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/MainBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/MainBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/MainHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/MainHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Article.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +84,7 @@
       <workItem from="1611137505010" duration="192000" />
       <workItem from="1611192291653" duration="22013000" />
       <workItem from="1611278799141" duration="11611000" />
+      <workItem from="1611473887169" duration="911000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1611137590971</created>
