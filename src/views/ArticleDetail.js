@@ -2,12 +2,13 @@ import { Affix } from "antd"
 import ArticleAnchor from "../components/article/ArticleAnchor"
 import ArticleInfo from "../components/article/ArticleInfo"
 import "./ArticleDetail.less"
+import banner from "../assets/img/banner.png"
 
 const ArticleDetail = () => {
     return (
         <div className="article-detail">
             <div className="content common_card">
-                <img className="poster" src="https://file.iviewui.com/asd/asd-pro-3.png" alt="" />
+                <img className="poster" src={banner} alt="" />
                 <div className="text">
                     <h2 className="title">vue和react中如何优雅地使用</h2>
                     <h3 id="h-1">111111</h3>

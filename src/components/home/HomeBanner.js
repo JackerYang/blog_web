@@ -1,10 +1,11 @@
 import avatar from "../../assets/img/avatar.jpg"
+import banner from "../../assets/img/banner.png"
 import "./HomeBanner.less"
 
 const HomeBanner = () => {
     return (
         <div className="common_card home-banner">
-            <img draggable={false} className="banner-img" src="https://file.iviewui.com/asd/asd-pro-3.png" alt="banner" />
+            <img draggable={false} className="banner-img" src={banner} alt="banner" />
             <div className="banner-avatar">
                 <img draggable={false} src={avatar} alt="avatar" />
             </div>
