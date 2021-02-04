@@ -20,7 +20,7 @@ const ArticleList = ({ icon, title, articles }) => {
                         <div className="article-main">
                             <h3 className="article-title" onClick={() => {toArticleDetail(article.id)}}>{article.title}</h3>
                             <div className="article-time">
-                                <Tooltip placement="top" title={`创作时间：${article.create_time}`}>
+                                <Tooltip placement="top" title={`发布时间：${article.create_time}`}>
                                     <span className="create-time"><i className="iconfont icon-xiezuojushi" />{article.create_time}</span>
                                 </Tooltip>
                                 {
