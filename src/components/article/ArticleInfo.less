@@ -1,4 +1,30 @@
 .info-content {
     padding: 16px;
     margin-bottom: 24px;
+    user-select: none;
+    .interactive {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 16px;
+        .item {
+            width: 40px;
+            text-align: center;
+            cursor: pointer;
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: @body-bg-color;
+                margin-bottom: 3px;
+                .iconfont {
+                    font-size: 20px;
+                    margin: 0 0 1px 2px;
+                }
+            }
+        }
+    }
 }

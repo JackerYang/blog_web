@@ -112,7 +112,7 @@ const ArticleDetail = () => {
                     <ArticleInfo />
                 </Affix>
 
-                <Affix offsetTop={222}>
+                <Affix offsetTop={337}>
                     <ArticleAnchor />
                 </Affix>
             </div>

@@ -8,20 +8,34 @@ const ArticleInfo = () => {
             <div className="info-content">
                 <Row gutter={[16, 8]}>
                     <Col span={12}>
-                        <span className="create-time"><i className="iconfont icon-icon_liulan-xian" />12，354</span>
+                        <span className="create-time">浏览: 12,354</span>
                     </Col>
                     <Col span={12}>
-                        <span className="update-time"><i className="iconfont icon-zishutongji" />322，134</span>
+                        <span className="update-time">字数: 322,134</span>
                     </Col>
                 </Row>
                 <Row gutter={[16, 8]}>
                     <Col span={12}>
-                        <span className="create-time"><i className="iconfont icon-xiezuojushi" />2021-02-03</span>
+                        <span className="create-time">发布: 2021-02-03</span>
                     </Col>
                     <Col span={12}>
-                        <span className="create-time"><i className="iconfont icon-gengxin" />2021-02-03</span>
+                        <span className="create-time">更新: 2021-02-03</span>
                     </Col>
                 </Row>
+                <div className="interactive">
+                    <div className="item active">
+                        <span className="icon"><i className="iconfont icon-shoucang"></i></span>
+                        <span>收藏</span>
+                    </div>
+                    <div className="item">
+                        <span className="icon"><i className="iconfont icon-dianzan"></i></span>
+                        <span>点赞</span>
+                    </div>
+                    <div className="item">
+                        <span className="icon"><i className="iconfont icon-comment-v2"></i></span>
+                        <span>评论</span>
+                    </div>
+                </div>
             </div>
         </WrapperCard>
     )
