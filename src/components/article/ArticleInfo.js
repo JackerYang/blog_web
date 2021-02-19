@@ -23,17 +23,14 @@ const ArticleInfo = () => {
                     </Col>
                 </Row>
                 <div className="interactive">
-                    <div className="item active">
+                    <div className="item">
                         <span className="icon"><i className="iconfont icon-shoucang"></i></span>
-                        <span>收藏</span>
                     </div>
                     <div className="item">
-                        <span className="icon"><i className="iconfont icon-dianzan"></i></span>
-                        <span>点赞</span>
+                        <span className="icon"><i className="iconfont icon-dianzan1"></i></span>
                     </div>
                     <div className="item">
                         <span className="icon"><i className="iconfont icon-comment-v2"></i></span>
-                        <span>评论</span>
                     </div>
                 </div>
             </div>
