@@ -9,4 +9,80 @@
             }
         }
     }
+    .comment-list {
+        padding: 16px 0 0;
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 16px 0 0;
+            .avatar {
+                width: 48px;
+            }
+            .item-content {
+                flex: 1;
+                overflow: hidden;
+                .comment-info {
+                    height: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .author-name {
+                        font-weight: bold;
+                        color: @text-desc-color;
+                        .reply-text {
+                            margin: 0 8px;
+                            color: @text-content-color;
+                        }
+                    }
+                    .comment-time {
+                        color: #ccc;
+                    }
+                }
+                .comment-text {
+                    font-size: 16px;
+                    margin: 8px 0;
+                    line-height: 1.8;
+                }
+                .comment-control {
+                    height: 20px;
+                    display: flex;
+                    align-items: center;
+                    color: @text-desc-color;
+                    margin-bottom: 16px;
+                    .like {
+                        margin-right: 16px;
+                        cursor: pointer;
+                        span {
+                            margin-left: 3px;
+                        }
+                    }
+                    .reply {
+                        cursor: pointer;
+                        span {
+                            margin-left: 5px;
+                        }
+                    }
+                    & > div {
+                        &:hover {
+                            color: @text-content-color;
+                        }
+                    }
+                }
+                .sub-item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    padding: 16px 0 0;
+                    border-top: 1px solid @split-line-color;
+                    &:first-child {
+                        margin-top: 16px;
+                    }
+                }
+            }
+            &:not(:last-child) {
+                border-bottom: 1px solid @split-line-color;
+            }
+        }
+    }
 }
