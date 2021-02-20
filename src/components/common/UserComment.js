@@ -2,16 +2,18 @@ import { Button, Input } from "antd"
 import { useEffect, useState } from "react"
 import "./UserComment.less"
 import WrapperCard from "./WrapperCard"
-import { Avatar } from 'antd'
+import { Avatar, Tag } from 'antd'
 
 const UserComment = () => {
     const [text, setText] = useState("")
     const [canPublish, setCanPublish] = useState(false)
-    const [list, setList] = useState([
+    const [replyToAuthor, setReplyToAuthor] = useState(null)
+    const [list] = useState([
         {
             id: 1,
             avatar: "",
             authorName: "哈哈哈",
+            authorId: 1,
             time: "2021-02-20 10:45:09",
             text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
             like: 234,
@@ -20,6 +22,7 @@ const UserComment = () => {
                     id: 1,
                     avatar: "",
                     authorName: "哈哈哈",
+                    authorId: 1,
                     receiveAuthorName: "嘿嘿和",
                     time: "2021-02-20 10:45:09",
                     text: "但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话",
@@ -29,6 +32,7 @@ const UserComment = () => {
                     id: 2,
                     avatar: "",
                     authorName: "哈哈哈",
+                    authorId: 1,
                     receiveAuthorName: "嘿嘿和",
                     time: "2021-02-20 10:45:09",
                     text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
@@ -40,6 +44,7 @@ const UserComment = () => {
             id: 2,
             avatar: "",
             authorName: "哈哈哈",
+            authorId: 1,
             time: "2021-02-20 10:45:09",
             text: "类似咱们国家的几位顶流，我也没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。类似咱们国家的几位顶流，我也类似咱们国家的几位顶流，我也没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。类似咱们国家的几位顶流，我也没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。",
             like: 234,
@@ -49,6 +54,7 @@ const UserComment = () => {
             id: 3,
             avatar: "",
             authorName: "哈哈哈",
+            authorId: 1,
             time: "2021-02-20 10:45:09",
             text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
             like: 234,
@@ -57,6 +63,7 @@ const UserComment = () => {
                     id: 1,
                     avatar: "",
                     authorName: "哈哈哈",
+                    authorId: 1,
                     receiveAuthorName: "嘿嘿和",
                     time: "2021-02-20 10:45:09",
                     text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
@@ -81,11 +88,16 @@ const UserComment = () => {
         console.log(text)
     }
 
+    const replyComment = author => {
+        setReplyToAuthor(author)
+    }
+
     return (
         <WrapperCard title="评论" iconColor="#ffc53d" iconBackground="#fff6e5" icon="icon-pinglun1">
             <div className="user-comment">
                 <div className="publish-comment">
                     <Input.TextArea allowClear onChange={textChange} autoSize={{ minRows: 3, maxRows: 18 }} placeholder="请输入评论" showCount maxLength={999} />
+                    {replyToAuthor && <Tag className="reply-author">回复 {replyToAuthor.name}</Tag>}
                     <div className="publish-comment-btn">
                         <Button onClick={publish} disabled={!canPublish} type="primary">发布</Button>
                     </div>
@@ -109,7 +121,7 @@ const UserComment = () => {
                                             <i className="iconfont icon-dianzan" />
                                             <span>{item.like}</span>
                                         </div>
-                                        <div className="reply">
+                                        <div className="reply" onClick={() => {replyComment({ name: item.authorName, id: item.authorId })}}>
                                             <i className="iconfont icon-icon_reply" />
                                             <span>回复</span>
                                         </div>
