@@ -1,8 +1,8 @@
-import { Button, Input } from "antd"
+import { Avatar, Button, Input, Tag } from "antd"
 import { useEffect, useState } from "react"
+import CustomAnchor from "./CustomAnchor"
 import "./UserComment.less"
 import WrapperCard from "./WrapperCard"
-import { Avatar, Tag } from 'antd'
 
 const UserComment = () => {
     const [text, setText] = useState("")
@@ -26,7 +26,7 @@ const UserComment = () => {
                     receiveAuthorName: "嘿嘿和",
                     time: "2021-02-20 10:45:09",
                     text: "但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话",
-                    like: 234,
+                    like: 234
                 },
                 {
                     id: 2,
@@ -36,7 +36,7 @@ const UserComment = () => {
                     receiveAuthorName: "嘿嘿和",
                     time: "2021-02-20 10:45:09",
                     text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
-                    like: 234,
+                    like: 234
                 }
             ]
         },
@@ -67,10 +67,10 @@ const UserComment = () => {
                     receiveAuthorName: "嘿嘿和",
                     time: "2021-02-20 10:45:09",
                     text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
-                    like: 234,
+                    like: 234
                 }
             ]
-        },
+        }
     ])
 
     // 输入事件
@@ -88,16 +88,28 @@ const UserComment = () => {
         console.log(text)
     }
 
+    // 回复评论
     const replyComment = author => {
         setReplyToAuthor(author)
+    }
+
+    // 撤销回复评论
+    const clearReplyToAuthor = () => {
+        setReplyToAuthor(null)
     }
 
     return (
         <WrapperCard title="评论" iconColor="#ffc53d" iconBackground="#fff6e5" icon="icon-pinglun1">
             <div className="user-comment">
-                <div className="publish-comment">
-                    <Input.TextArea allowClear onChange={textChange} autoSize={{ minRows: 3, maxRows: 18 }} placeholder="请输入评论" showCount maxLength={999} />
-                    {replyToAuthor && <Tag className="reply-author">回复 {replyToAuthor.name}</Tag>}
+                <div className="publish-comment" id="input-comment">
+                    <Input.TextArea allowClear onChange={textChange} autoSize={{
+                        minRows: 3,
+                        maxRows: 18
+                    }} placeholder="请输入评论" showCount maxLength={999} />
+                    {
+                        replyToAuthor &&
+                        <Tag className="reply-author" color="orange" visible={replyToAuthor} closable onClose={clearReplyToAuthor}>回复 {replyToAuthor.name}</Tag>
+                    }
                     <div className="publish-comment-btn">
                         <Button onClick={publish} disabled={!canPublish} type="primary">发布</Button>
                     </div>
@@ -121,10 +133,14 @@ const UserComment = () => {
                                             <i className="iconfont icon-dianzan" />
                                             <span>{item.like}</span>
                                         </div>
-                                        <div className="reply" onClick={() => {replyComment({ name: item.authorName, id: item.authorId })}}>
-                                            <i className="iconfont icon-icon_reply" />
-                                            <span>回复</span>
-                                        </div>
+                                        <CustomAnchor offsetTop={168} anchorId="input-comment">
+                                            <div className="reply" onClick={() => {
+                                                replyComment({ name: item.authorName, id: item.authorId })
+                                            }}>
+                                                <i className="iconfont icon-icon_reply" />
+                                                <span>回复</span>
+                                            </div>
+                                        </CustomAnchor>
                                     </div>
 
                                     {
@@ -148,10 +164,17 @@ const UserComment = () => {
                                                             <i className="iconfont icon-dianzan" />
                                                             <span>{subItem.like}</span>
                                                         </div>
-                                                        <div className="reply">
-                                                            <i className="iconfont icon-icon_reply" />
-                                                            <span>回复</span>
-                                                        </div>
+                                                        <CustomAnchor offsetTop={168} anchorId="input-comment">
+                                                            <div className="reply" onClick={() => {
+                                                                replyComment({
+                                                                    name: subItem.authorName,
+                                                                    id: subItem.authorId
+                                                                })
+                                                            }}>
+                                                                <i className="iconfont icon-icon_reply" />
+                                                                <span>回复</span>
+                                                            </div>
+                                                        </CustomAnchor>
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,7 +185,6 @@ const UserComment = () => {
                         ))
                     }
                 </div>
-
             </div>
         </WrapperCard>
     )

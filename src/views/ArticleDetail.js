@@ -1,9 +1,9 @@
 import { Affix } from "antd"
+import banner from "../assets/img/banner.png"
 import ArticleAnchor from "../components/article/ArticleAnchor"
 import ArticleInfo from "../components/article/ArticleInfo"
 import UserComment from "../components/common/UserComment"
 import "./ArticleDetail.less"
-import banner from "../assets/img/banner.png"
 
 const ArticleDetail = () => {
     return (

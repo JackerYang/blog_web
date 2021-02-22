@@ -1,4 +1,5 @@
 import { Col, Row } from "antd"
+import CustomAnchor from "../common/CustomAnchor"
 import WrapperCard from "../common/WrapperCard"
 import "./ArticleInfo.less"
 
@@ -24,14 +25,17 @@ const ArticleInfo = () => {
                 </Row>
                 <div className="interactive">
                     <div className="item">
-                        <span className="icon"><i className="iconfont icon-shoucang"></i></span>
+                        <span className="icon"><i className="iconfont icon-shoucang" /></span>
                     </div>
                     <div className="item">
-                        <span className="icon"><i className="iconfont icon-dianzan1"></i></span>
+                        <span className="icon"><i className="iconfont icon-dianzan1" /></span>
                     </div>
-                    <div className="item">
-                        <span className="icon"><i className="iconfont icon-comment-v2"></i></span>
-                    </div>
+                    <CustomAnchor offsetTop={168} anchorId="input-comment">
+                        <div className="item">
+                            <span className="icon"><i className="iconfont icon-comment-v2" /></span>
+                        </div>
+                    </CustomAnchor>
+
                 </div>
             </div>
         </WrapperCard>
