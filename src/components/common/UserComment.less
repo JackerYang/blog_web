@@ -109,5 +109,49 @@
                 border-bottom: 1px solid @split-line-color;
             }
         }
+        &-skeleton {
+            .item-skeleton {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 16px 0;
+                .avatar-skeleton {
+                    width: 32px;
+                    height: 32px;
+                    margin-right: 16px;
+                    .ant-skeleton-title {
+                        margin: 0;
+                        height: 100%;
+                    }
+                }
+                .content-skeleton {
+                    overflow: hidden;
+                    flex: 1;
+                    .info-skeleton {
+                        display: flex;
+                        justify-content: space-between;
+                        .ant-skeleton {
+                            width: 120px;
+                            .ant-skeleton-title {
+                                margin: 0 0 16px;
+                            }
+                        }
+                    }
+                    .control-skeleton {
+                        display: flex;
+                        .ant-skeleton {
+                            width: 50px;
+                            margin-right: 24px;
+                            .ant-skeleton-title {
+                                margin: 3px 0 0;
+                            }
+                        }
+                    }
+                }
+                &:not(:last-child) {
+                    border-bottom: 1px solid @split-line-color;
+                }
+            }
+        }
     }
 }

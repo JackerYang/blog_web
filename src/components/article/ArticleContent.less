@@ -1,0 +1,46 @@
+.article-content {
+    .poster {
+        width: 100%;
+        height: auto;
+        user-select: none;
+    }
+    .text {
+        padding: 24px 16px;
+        .title {
+            font-size: 28px;
+            margin: 16px 0 40px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        h3 {
+            transition: all .5s;
+            &:focus {
+                .common_highlight;
+            }
+        }
+    }
+    &-skeleton {
+        .poster-skeleton {
+            height: 220px;
+            .ant-skeleton-title {
+                height: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+        .text-skeleton {
+            padding: 24px 16px;
+            .title-skeleton {
+                .ant-skeleton-title {
+                    height: 32px;
+                    margin: 16px 0 40px;
+                }
+            }
+            .html-skeleton {
+                margin: 16px 0;
+            }
+        }
+    }
+}

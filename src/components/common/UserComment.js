@@ -1,4 +1,4 @@
-import { Avatar, Button, Input, Tag } from "antd"
+import { Avatar, Button, Input, Skeleton, Tag } from "antd"
 import { useEffect, useState } from "react"
 import CustomAnchor from "./CustomAnchor"
 import "./UserComment.less"
@@ -7,71 +7,84 @@ import WrapperCard from "./WrapperCard"
 const UserComment = () => {
     const [text, setText] = useState("")
     const [canPublish, setCanPublish] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [replyToAuthor, setReplyToAuthor] = useState(null)
-    const [list] = useState([
-        {
-            id: 1,
-            avatar: "",
-            authorName: "哈哈哈",
-            authorId: 1,
-            time: "2021-02-20 10:45:09",
-            text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
-            like: 234,
-            subComments: [
+    const [list, setList] = useState([])
+
+    const getData = () => {
+        setLoading(true)
+        setTimeout(() => {
+            setList([
                 {
                     id: 1,
                     avatar: "",
                     authorName: "哈哈哈",
                     authorId: 1,
-                    receiveAuthorName: "嘿嘿和",
                     time: "2021-02-20 10:45:09",
-                    text: "但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话",
-                    like: 234
+                    text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
+                    like: 234,
+                    subComments: [
+                        {
+                            id: 1,
+                            avatar: "",
+                            authorName: "哈哈哈",
+                            authorId: 1,
+                            receiveAuthorName: "嘿嘿和",
+                            time: "2021-02-20 10:45:09",
+                            text: "但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话但你们要非说他们在海外非常火的话",
+                            like: 234
+                        },
+                        {
+                            id: 2,
+                            avatar: "",
+                            authorName: "哈哈哈",
+                            authorId: 1,
+                            receiveAuthorName: "嘿嘿和",
+                            time: "2021-02-20 10:45:09",
+                            text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
+                            like: 234
+                        }
+                    ]
                 },
                 {
                     id: 2,
                     avatar: "",
                     authorName: "哈哈哈",
                     authorId: 1,
-                    receiveAuthorName: "嘿嘿和",
                     time: "2021-02-20 10:45:09",
-                    text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
-                    like: 234
-                }
-            ]
-        },
-        {
-            id: 2,
-            avatar: "",
-            authorName: "哈哈哈",
-            authorId: 1,
-            time: "2021-02-20 10:45:09",
-            text: "类似咱们国家的几位顶流，我也没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。类似咱们国家的几位顶流，我也类似咱们国家的几位顶流，我也没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。类似咱们国家的几位顶流，我也没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。",
-            like: 234,
-            subComments: []
-        },
-        {
-            id: 3,
-            avatar: "",
-            authorName: "哈哈哈",
-            authorId: 1,
-            time: "2021-02-20 10:45:09",
-            text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
-            like: 234,
-            subComments: [
+                    text: "类似咱们国家的几位顶流，我也没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。类似咱们国家的几位顶流，我也类似咱们国家的几位顶流，我也没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。类似咱们国家的几位顶流，我也没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。没听过他们的歌，他们也应该是很优秀的歌手，但你们要非说他们在海外非常火的话，那我就不同意了。",
+                    like: 234,
+                    subComments: []
+                },
                 {
-                    id: 1,
+                    id: 3,
                     avatar: "",
                     authorName: "哈哈哈",
                     authorId: 1,
-                    receiveAuthorName: "嘿嘿和",
                     time: "2021-02-20 10:45:09",
                     text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
-                    like: 234
+                    like: 234,
+                    subComments: [
+                        {
+                            id: 1,
+                            avatar: "",
+                            authorName: "哈哈哈",
+                            authorId: 1,
+                            receiveAuthorName: "嘿嘿和",
+                            time: "2021-02-20 10:45:09",
+                            text: "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
+                            like: 234
+                        }
+                    ]
                 }
-            ]
-        }
-    ])
+            ])
+            setLoading(false)
+        }, 1000)
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
 
     // 输入事件
     const textChange = e => {
@@ -116,6 +129,29 @@ const UserComment = () => {
                 </div>
 
                 <div className="comment-list">
+                    {
+                        loading &&
+                        <div className="comment-list-skeleton">
+                            {
+                                Array.from({ length: 3 }).map((v, k) => (
+                                    <div key={k} className="item-skeleton">
+                                        <Skeleton.Button className="avatar-skeleton" shape="circle" active={true} />
+                                        <div className="content-skeleton">
+                                            <div className="info-skeleton">
+                                                <Skeleton rows={1} title={{ width: 120 }} paragraph={false} active={true} />
+                                                <Skeleton rows={1} title={{ width: 120 }} paragraph={false} active={true} />
+                                            </div>
+                                            <Skeleton className="text-skeleton" title={false} paragraph={{ rows: 2 }} active={true} />
+                                            <div className="control-skeleton">
+                                                <Skeleton rows={1} title={true} paragraph={false} active={true} />
+                                                <Skeleton rows={1} title={true} paragraph={false} active={true} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    }
                     {
                         list.map(item => (
                             <div key={item.id} className="item">
